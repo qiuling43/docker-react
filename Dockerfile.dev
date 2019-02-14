@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR /Ling/apps/frountend1
+COPY ./package.json ./
+RUN npm cache verify
+RUN npm install
+COPY ./ ./
+CMD ["npm", "run", "start"]
